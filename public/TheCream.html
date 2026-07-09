@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Disfruta de los mejores postres, helados y antojitos rápidos en Piura. The Cream, calidad y sabor para toda la familia.">
+    <title>The Cream - Postres y Alimentos Rápidos en Piura</title>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Pacifico&family=Quicksand:wght@400;600;700&family=Roboto:wght@300;400;500&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+    <script>
+        // Evitar el parpadeo rosado (FOUC) cargando la última temática conocida síncronamente
+        const savedTheme = localStorage.getItem('thecream_theme_css');
+        if (savedTheme && savedTheme !== 'null') {
+            document.write('<link rel="stylesheet" id="theme-css-preload" href="' + savedTheme + '">');
+        }
+    </script>
+</head>
+
+<body>
+    <div id="promo-banner" class="promo-banner" style="display: none;">
+        <p><i class="fa-solid fa-heart"></i> ¡Promoción Especial: 15% de descuento en consumo local si vienes con tu
+            pareja! <i class="fa-solid fa-heart"></i></p>
+    </div>
+
+    <header>
+        <div style="display: flex; align-items: center; gap: 15px;">
+            <div class="dropdown">
+                <button class="btn-categorias" id="btn-categorias"><i class="fa-solid fa-bars"></i> Menú</button>
+                <div class="dropdown-content" id="menu-categorias">
+                    <!-- Menú dinámico poblado desde la base de datos por app.js -->
+                </div>
+            </div>
+            <div class="logo-container">
+                <img src="imagenes/Inicio/TheCream.jpg" alt="Logo The Cream" class="logo">
+            </div>
+        </div>
+        <button class="menu-hamburguesa" id="btn-menu"><i class="fa-solid fa-bars"></i></button>
+        <nav id="menu-principal">
+            <ul>
+                <li><a href="#catalogo-dinamico" class="nav-link active">Catálogo y Promos</a></li>
+                <li><a href="nosotros.html" class="nav-link">Sobre Nosotros</a></li>
+                <li><a href="contacto.html" class="nav-link">Contacto</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <!-- ==========================================
+         SECCIÓN HERO (CARRUSEL)
+         ========================================== -->
+        <section class="hero" id="hero-carousel">
+            <div class="hero-slide active"
+                style="background-image: linear-gradient(var(--overlay-color, rgba(0,0,0,0.6)), var(--overlay-color, rgba(0,0,0,0.6))), url('imagenes/Inicio/banner-hero.jpg');">
+                <div class="hero-content">
+                    <h2>Endulza tu Día</h2>
+                    <p>Postres artesanales, helados refrescantes y los mejores antojitos rápidos de Piura. Calidad y
+                        sabor para toda la familia.</p>
+                    <a href="#catalogo" class="btn-principal" style="margin-top: 15px;">Ver Catálogo</a>
+                </div>
+            </div>
+
+            <div class="hero-slide"
+                style="background-image: linear-gradient(var(--overlay-color, rgba(0,0,0,0.6)), var(--overlay-color, rgba(0,0,0,0.6))), url('imagenes/combos/combo-familiar.jpg');">
+                <div class="hero-content">
+                    <h2>Descubre Nuestros Combos</h2>
+                    <p>Arma tu combinación perfecta y llévate más pagando menos. ¡Ideal para compartir!</p>
+                    <a href="javascript:void(0)" class="btn-principal" style="margin-top: 15px;"
+                        onclick="if(window.filtrarCategoria) { event.preventDefault(); filtrarCategoria('combos'); }">Ver
+                        Combos</a>
+                </div>
+            </div>
+
+            <div class="hero-indicators">
+                <div class="indicator active">
+                    <div class="progress"></div>
+                </div>
+                <div class="indicator">
+                    <div class="progress"></div>
+                </div>
+            </div>
+        </section>
+
+        <section id="catalogo">
+            <div class="titulo-seccion">
+                <h2>Nuestro Catálogo</h2>
+                <p>Descubre nuestra variedad de productos hechos con amor</p>
+            </div>
+
+            <div id="catalogo-dinamico">
+                <p style="text-align: center;">Cargando catálogo...</p>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <img src="imagenes/inicio/TheCream.jpg" alt="The Cream Logo" class="footer-logo">
+            <p>Postres y Alimentos Rápidos</p>
+            <div style="margin: 15px 0; display: flex; gap: 20px; justify-content: center;">
+                <a href="#" class="link-instagram" target="_blank"
+                    style="color: white; font-size: 1.8rem; transition: transform 0.3s;"
+                    onmouseover="this.style.transform='scale(1.2)'" onmouseout="this.style.transform='scale(1)'"><i
+                        class="fa-brands fa-instagram"></i></a>
+                <a href="#" class="link-tiktok" target="_blank"
+                    style="color: white; font-size: 1.8rem; transition: transform 0.3s;"
+                    onmouseover="this.style.transform='scale(1.2)'" onmouseout="this.style.transform='scale(1)'"><i
+                        class="fa-brands fa-tiktok"></i></a>
+                <a href="#" class="link-whatsapp" target="_blank"
+                    style="color: white; font-size: 1.8rem; transition: transform 0.3s;"
+                    onmouseover="this.style.transform='scale(1.2)'" onmouseout="this.style.transform='scale(1)'"><i
+                        class="fa-brands fa-whatsapp"></i></a>
+            </div>
+            <p>&copy; 2026 Todos los derechos reservados | Piura, Perú</p>
+        </div>
+    </footer>
+
+    <!-- ==========================================
+         CARRITO DE COMPRAS
+         ========================================== -->
+    <div class="cart-floating-btn" id="btn-abrir-carrito">
+        <i class="fa-solid fa-cart-shopping" style="margin-right: 5px;"></i> <span id="cart-count">0</span>
+    </div>
+
+    <div class="cart-panel" id="cart-panel">
+        <div class="cart-header">
+            <h2>Tu Pedido</h2>
+            <button id="btn-cerrar-carrito" class="btn-close">&times;</button>
+        </div>
+        <div class="cart-items" id="cart-items">
+            <p style="text-align:center; color: #888; margin-top: 20px;">Tu carrito está vacío.</p>
+        </div>
+        <div class="cart-footer">
+            <div class="cart-total">Total: S/ <span id="cart-total-price">0.00</span></div>
+            <button class="btn-principal" style="width: 100%; margin-top: 15px;" id="btn-comprar">Procesar
+                Compra</button>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+
+</html>

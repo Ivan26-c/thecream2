@@ -1,0 +1,88 @@
+:root {
+    --primary: #ff7518 !important;
+    /* Halloween Orange */
+    --secondary: #d35400 !important;
+    /* Darker Orange */
+    --dark: #1a1a1a !important;
+    /* Near Black */
+    --overlay-color: rgba(255, 150, 50, 0.2) !important;
+    /* Orange tint for carousel */
+}
+
+body {
+    background-color: #ffffff !important;
+    background-image:
+        url("data:image/svg+xml,%3Csvg width='400' height='400' xmlns='http://www.w3.org/2000/svg'%3E%3Cg opacity='0.3'%3E%3Cg transform='translate(40, 80) scale(0.6)'%3E%3Cpath d='M20 90 Q20 50 50 20 Q80 50 80 90 Q70 80 60 90 Q50 80 40 90 Q30 80 20 90' fill='%23ffffff' stroke='%23000000' stroke-width='4'/%3E%3Ccircle cx='40' cy='45' r='5' fill='%23000'/%3E%3Ccircle cx='60' cy='45' r='5' fill='%23000'/%3E%3Cellipse cx='50' cy='60' rx='4' ry='8' fill='%23000'/%3E%3C/g%3E%3Cg transform='translate(250, 250) scale(0.7)'%3E%3Cpath d='M20 90 Q20 50 50 20 Q80 50 80 90 Q70 80 60 90 Q50 80 40 90 Q30 80 20 90' fill='%23ffffff' stroke='%23000000' stroke-width='4'/%3E%3Ccircle cx='40' cy='45' r='5' fill='%23000'/%3E%3Ccircle cx='60' cy='45' r='5' fill='%23000'/%3E%3Cellipse cx='50' cy='60' rx='4' ry='8' fill='%23000'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E"),
+        url("data:image/svg+xml,%3Csvg width='600' height='600' xmlns='http://www.w3.org/2000/svg'%3E%3Cg opacity='0.2'%3E%3Cg transform='translate(100, 150) scale(0.8)'%3E%3Cpath d='M20 90 Q20 50 50 20 Q80 50 80 90 Q70 80 60 90 Q50 80 40 90 Q30 80 20 90' fill='%23ffffff' stroke='%23000000' stroke-width='4'/%3E%3Ccircle cx='40' cy='45' r='5' fill='%23000'/%3E%3Ccircle cx='60' cy='45' r='5' fill='%23000'/%3E%3Cellipse cx='50' cy='60' rx='4' ry='8' fill='%23000'/%3E%3C/g%3E%3Cg transform='translate(400, 400) scale(0.9)'%3E%3Cpath d='M20 90 Q20 50 50 20 Q80 50 80 90 Q70 80 60 90 Q50 80 40 90 Q30 80 20 90' fill='%23ffffff' stroke='%23000000' stroke-width='4'/%3E%3Ccircle cx='40' cy='45' r='5' fill='%23000'/%3E%3Ccircle cx='60' cy='45' r='5' fill='%23000'/%3E%3Cellipse cx='50' cy='60' rx='4' ry='8' fill='%23000'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E") !important;
+    background-size: 400px 400px, 600px 600px !important;
+    background-attachment: fixed, fixed !important;
+    animation: floatGhosts 40s linear infinite !important;
+}
+
+@keyframes floatGhosts {
+    0% {
+        background-position: 0px 0px, 0px 0px;
+    }
+    100% {
+        background-position: 0px -800px, 0px -600px;
+    }
+}
+
+#catalogo {
+    background-color: transparent !important;
+}
+
+.btn-principal {
+    background: linear-gradient(135deg, #ff7518, #e67e22) !important;
+    border: none !important;
+    color: white !important;
+    box-shadow: 0 4px 10px rgba(255, 117, 24, 0.3) !important;
+}
+
+.hero-slide h2 {
+    color: white !important;
+    text-shadow: 2px 2px 10px rgba(211, 84, 0, 0.9) !important;
+}
+
+.producto-card {
+    border-bottom: 3px solid #ff7518 !important;
+    background: rgba(255, 255, 255, 0.85) !important;
+    backdrop-filter: blur(5px) !important;
+}
+
+.nav-link {
+    color: white !important;
+}
+
+.nav-link.active,
+.nav-link:hover {
+    color: var(--primary) !important;
+    border-bottom: 2px solid var(--primary) !important;
+    background-color: transparent !important;
+}
+
+footer {
+    background-color: #2a1000 !important;
+}
+
+.cart-footer {
+    background-color: #4a1c00 !important;
+    color: white !important;
+}
+
+.cart-footer .total-amount {
+    color: var(--primary) !important;
+}
+
+.producto-card:hover {
+    box-shadow: 0 10px 20px rgba(255, 117, 24, 0.4) !important;
+}
+
+header {
+    background-color: rgba(255, 130, 30, 0.3) !important;
+}
+
+header.scrolled,
+header.header-interno {
+    background-color: rgba(248, 173, 112, 0.95) !important;
+}

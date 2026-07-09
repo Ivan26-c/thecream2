@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sobre Nosotros - The Cream</title>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Pacifico&family=Quicksand:wght@400;600;700&family=Roboto:wght@300;400;500&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+    <script>
+        // Evitar el parpadeo rosado (FOUC) cargando la última temática conocida síncronamente
+        const savedTheme = localStorage.getItem('thecream_theme_css');
+        if (savedTheme && savedTheme !== 'null') {
+            document.write('<link rel="stylesheet" id="theme-css-preload" href="' + savedTheme + '">');
+        }
+    </script>
+</head>
+
+<body class="bg-pattern">
+    <div id="promo-banner" class="promo-banner" style="display: none;">
+        <p><i class="fa-solid fa-heart"></i> ¡Promoción Especial: 15% de descuento en consumo local si vienes con tu
+            pareja! <i class="fa-solid fa-heart"></i></p>
+    </div>
+
+    <header class="header-interno">
+        <div style="display: flex; align-items: center; gap: 15px;">
+            <div class="dropdown">
+                <button class="btn-categorias" id="btn-categorias"><i class="fa-solid fa-bars"></i> Menú</button>
+                <div class="dropdown-content" id="menu-categorias">
+                    <a href="TheCream.html#catalogo-dinamico" id="menu-item-especiales" style="display: none;"
+                        onclick="if(window.filtrarCategoria) { event.preventDefault(); filtrarCategoria('especiales'); }"><i
+                            class="fa-solid fa-star"></i> Especiales</a>
+                    <a href="TheCream.html#catalogo-dinamico"
+                        onclick="if(window.filtrarCategoria) { event.preventDefault(); filtrarCategoria('todo'); }"><i
+                            class="fa-solid fa-border-all"></i> Ver Todo</a>
+                    <a href="TheCream.html#catalogo-dinamico"
+                        onclick="if(window.filtrarCategoria) { event.preventDefault(); filtrarCategoria('postres'); }"><i
+                            class="fa-solid fa-cake-candles"></i> Postres</a>
+                    <a href="TheCream.html#catalogo-dinamico"
+                        onclick="if(window.filtrarCategoria) { event.preventDefault(); filtrarCategoria('helados'); }"><i
+                            class="fa-solid fa-ice-cream"></i> Helados</a>
+                    <a href="TheCream.html#catalogo-dinamico"
+                        onclick="if(window.filtrarCategoria) { event.preventDefault(); filtrarCategoria('bebidas'); }"><i
+                            class="fa-solid fa-glass-water"></i> Bebidas</a>
+                    <a href="TheCream.html#catalogo-dinamico"
+                        onclick="if(window.filtrarCategoria) { event.preventDefault(); filtrarCategoria('salados'); }"><i
+                            class="fa-solid fa-pizza-slice"></i> Salados</a>
+                    <a href="TheCream.html#catalogo-dinamico"
+                        onclick="if(window.filtrarCategoria) { event.preventDefault(); filtrarCategoria('combos'); }"><i
+                            class="fa-solid fa-gift"></i> Combos</a>
+                </div>
+            </div>
+            <div class="logo-container">
+                <img src="imagenes/Inicio/TheCream.jpg" alt="Logo The Cream" class="logo">
+            </div>
+        </div>
+        <button class="menu-hamburguesa" id="btn-menu"><i class="fa-solid fa-bars"></i></button>
+        <nav id="menu-principal">
+            <ul>
+                <li><a href="TheCream.html" class="nav-link">Catálogo y Promos</a></li>
+                <li><a href="nosotros.html" class="nav-link active">Sobre Nosotros</a></li>
+                <li><a href="contacto.html" class="nav-link">Contacto</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <!-- ==========================================
+             SPLIT LAYOUT (NOSOTROS)
+             ========================================== -->
+        <div class="split-layout-container">
+            <!-- Bloque 1: Historia -->
+            <section class="split-section">
+                <div class="split-text">
+                    <h2>Nuestra Historia</h2>
+                    <p>The Cream no nació en una gran fábrica, sino en la cocina de una familia apasionada por los
+                        postres. Comenzamos vendiendo tortas por encargo a amigos y vecinos, y rápidamente nos dimos
+                        cuenta de que nuestra receta secreta —la mezcla de ingredientes 100% locales y muchísimo amor—
+                        era algo que debíamos compartir con toda nuestra hermosa ciudad de Piura.</p>
+                    <p>Hoy en día, no solo ofrecemos postres fríos y dulces tradicionales que refrescan las calurosas
+                        tardes, sino que hemos expandido nuestro menú para incluir comida rápida de alta calidad.
+                        Nuestro compromiso es el mismo que el primer día: sacarte una sonrisa con cada bocado.</p>
+
+                    <h3>Misión y Visión</h3>
+                    <p><i class="fa-solid fa-bullseye" style="color: var(--primary); margin-right: 8px;"></i>
+                        <strong>Misión:</strong> Endulzar la vida de nuestros clientes ofreciendo productos artesanales
+                        de excelente calidad y un servicio rápido, cálido y cercano.</p>
+                    <p><i class="fa-solid fa-eye" style="color: var(--primary); margin-right: 8px;"></i>
+                        <strong>Visión:</strong> Convertirnos en la cadena de postres y snacks favorita de todo el norte
+                        del país, innovando constantemente sin perder nuestra esencia casera.</p>
+                </div>
+                <div class="split-image" style="background-image: url('imagenes/Inicio/historia_bg.png');"></div>
+            </section>
+
+            <!-- Bloque 2: Ubicación -->
+            <section class="split-section reverse">
+                <div class="split-text">
+                    <h2>Encuéntranos Aquí</h2>
+                    <p>Visítanos en cualquiera de nuestras sedes. Siempre habrá alguien listo para atenderte con la
+                        mejor energía.</p>
+                    <ul>
+                        <li><i class="fa-solid fa-cart-shopping" style="color: var(--primary);"></i> <strong>Módulo
+                                Express 1:</strong> Exteriores de Real Plaza.</li>
+                        <li><i class="fa-solid fa-cart-shopping" style="color: var(--primary);"></i> <strong>Módulo
+                                Express 2:</strong> Exteriores de Mall Plaza Castilla.</li>
+                        <li><i class="fa-solid fa-location-dot" style="color: var(--primary);"></i> <strong>Local Físico
+                                Principal:</strong> Av. Vice Mz A lote 60.</li>
+                    </ul>
+
+                    <a href="https://www.google.com/maps/search/?api=1&query=The+Cream+Piura" target="_blank"
+                        class="btn-principal"
+                        style="width: 100%; margin-top: 10px; margin-bottom: 20px; text-align: center; display: block;"><i
+                            class="fa-solid fa-map-location-dot"></i> Abrir en Google Maps</a>
+
+                    <h3>Horarios de Atención</h3>
+                    <table class="tabla-horarios" style="margin-top: 20px;">
+                        <thead>
+                            <tr>
+                                <th>Día</th>
+                                <th>Local Principal</th>
+                                <th>Módulos</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Lunes - Jueves</td>
+                                <td>10:00 AM - 9:00 PM</td>
+                                <td>11:00 AM - 10:00 PM</td>
+                            </tr>
+                            <tr>
+                                <td>Viernes - Sábado</td>
+                                <td>10:00 AM - 10:00 PM</td>
+                                <td>11:00 AM - 11:00 PM</td>
+                            </tr>
+                            <tr>
+                                <td>Domingos</td>
+                                <td>11:00 AM - 8:00 PM</td>
+                                <td>11:00 AM - 10:00 PM</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="split-image" style="background-image: url('imagenes/Inicio/ubicacion_bg.png');"></div>
+            </section>
+        </div>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <img src="imagenes/inicio/TheCream.jpg" alt="The Cream Logo" class="footer-logo">
+            <p>Postres y Alimentos Rápidos</p>
+            <div style="margin: 15px 0; display: flex; gap: 20px; justify-content: center;">
+                <a href="#" class="link-instagram" target="_blank"
+                    style="color: white; font-size: 1.8rem; transition: transform 0.3s;"
+                    onmouseover="this.style.transform='scale(1.2)'" onmouseout="this.style.transform='scale(1)'"><i
+                        class="fa-brands fa-instagram"></i></a>
+                <a href="#" class="link-tiktok" target="_blank"
+                    style="color: white; font-size: 1.8rem; transition: transform 0.3s;"
+                    onmouseover="this.style.transform='scale(1.2)'" onmouseout="this.style.transform='scale(1)'"><i
+                        class="fa-brands fa-tiktok"></i></a>
+                <a href="#" class="link-whatsapp" target="_blank"
+                    style="color: white; font-size: 1.8rem; transition: transform 0.3s;"
+                    onmouseover="this.style.transform='scale(1.2)'" onmouseout="this.style.transform='scale(1)'"><i
+                        class="fa-brands fa-whatsapp"></i></a>
+            </div>
+            <p>&copy; 2026 Todos los derechos reservados | Piura, Perú</p>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', async () => {
+            try {
+                const res = await fetch('/api/config');
+                if (res.ok) {
+                    const config = await res.json();
+                    if (config.whatsapp) {
+                        const enlacesWs = document.querySelectorAll('a[href*="wa.me"]');
+                        enlacesWs.forEach(a => {
+                            const url = new URL(a.href);
+                            const texto = url.searchParams.get('text') || '';
+                            a.href = `https://wa.me/${config.whatsapp.replace(/\+/g, '')}${texto ? '?text=' + encodeURIComponent(texto) : ''}`;
+                        });
+                        const textosWs = document.querySelectorAll('.txt-whatsapp');
+                        textosWs.forEach(el => el.textContent = config.whatsapp);
+                    }
+                    if (config.instagram) {
+                        document.querySelectorAll('.link-instagram').forEach(a => a.href = config.instagram);
+                    }
+                    if (config.tiktok) {
+                        document.querySelectorAll('.link-tiktok').forEach(a => a.href = config.tiktok);
+                    }
+                    if (config.color_primario) {
+                        document.documentElement.style.setProperty('--primary', config.color_primario);
+                        let hex = String(config.color_primario).replace(/[^0-9a-f]/gi, '');
+                        if (hex.length < 6) hex = hex[0] + hex[0] + hex[1] + hex[1] + hex[2] + hex[2];
+                        let lum = -0.3;
+                        let rgb = "#", c, i;
+                        for (i = 0; i < 3; i++) {
+                            c = parseInt(hex.substr(i * 2, 2), 16);
+                            c = Math.round(Math.min(Math.max(0, c + (c * lum)), 255)).toString(16);
+                            rgb += ("00" + c).substr(c.length);
+                        }
+                        document.documentElement.style.setProperty('--secondary', rgb);
+                    }
+                }
+            } catch (e) { console.error(e); }
+
+            // Cargar temática activa
+            try {
+                const resTematica = await fetch('/api/tematica-activa');
+                if (resTematica.ok) {
+                    const dataTematica = await resTematica.json();
+                    if (dataTematica.archivo_css && dataTematica.archivo_css !== 'null') {
+                        localStorage.setItem('thecream_theme_css', dataTematica.archivo_css);
+                        const preload = document.getElementById('theme-css-preload');
+                        if (preload && preload.getAttribute('href') !== dataTematica.archivo_css) {
+                            preload.remove();
+                        }
+                        if (!document.querySelector(`link[href="${dataTematica.archivo_css}"]`)) {
+                            const link = document.createElement('link');
+                            link.rel = 'stylesheet';
+                            link.href = dataTematica.archivo_css;
+                            document.head.appendChild(link);
+                        }
+                    } else {
+                        localStorage.setItem('thecream_theme_css', 'null');
+                        const preload = document.getElementById('theme-css-preload');
+                        if (preload) preload.remove();
+                    }
+                    const logoImg = document.querySelector('.logo');
+                    const menuEspeciales = document.getElementById('menu-item-especiales');
+                    if (dataTematica.nombre === 'San Valentín' && logoImg) {
+                        logoImg.src = 'imagenes/Inicio/logo_san_valentin.png';
+                        if (menuEspeciales) menuEspeciales.style.display = 'block';
+                    } else if (dataTematica.nombre === 'Navidad' && logoImg) {
+                        logoImg.src = 'imagenes/Inicio/logo_navidad.png';
+                        if (menuEspeciales) menuEspeciales.style.display = 'block';
+                    } else if (dataTematica.nombre === 'Año Nuevo' && logoImg) {
+                        logoImg.src = 'imagenes/Inicio/logo_ano_nuevo.png';
+                        if (menuEspeciales) menuEspeciales.style.display = 'block';
+                    } else if (dataTematica.nombre === 'Halloween' && logoImg) {
+                        logoImg.src = 'imagenes/Inicio/logo_halloween.png';
+                        if (menuEspeciales) menuEspeciales.style.display = 'block';
+                    } else {
+                        if (logoImg) logoImg.src = 'imagenes/Inicio/TheCream.jpg';
+                        if (menuEspeciales) menuEspeciales.style.display = 'none';
+                    }
+                }
+            } catch (e) { console.error('Error cargando temática:', e); }
+
+            const btnMenu = document.getElementById('btn-menu');
+            const menuPrincipal = document.getElementById('menu-principal');
+            if (btnMenu && menuPrincipal) {
+                btnMenu.addEventListener('click', () => {
+                    menuPrincipal.classList.toggle('nav-activo');
+                });
+            }
+        });
+    </script>
+</body>
+
+</html>

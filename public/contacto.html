@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contacto - The Cream</title>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Pacifico&family=Quicksand:wght@400;600;700&family=Roboto:wght@300;400;500&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+    <script>
+        // Evitar el parpadeo rosado (FOUC) cargando la última temática conocida síncronamente
+        const savedTheme = localStorage.getItem('thecream_theme_css');
+        if (savedTheme && savedTheme !== 'null') {
+            document.write('<link rel="stylesheet" id="theme-css-preload" href="' + savedTheme + '">');
+        }
+    </script>
+</head>
+
+<body class="bg-pattern">
+    <div id="promo-banner" class="promo-banner" style="display: none;">
+        <p><i class="fa-solid fa-heart"></i> ¡Promoción Especial: 15% de descuento en consumo local si vienes con tu
+            pareja! <i class="fa-solid fa-heart"></i></p>
+    </div>
+
+    <header class="header-interno">
+        <div style="display: flex; align-items: center; gap: 15px;">
+            <div class="dropdown">
+                <button class="btn-categorias" id="btn-categorias"><i class="fa-solid fa-bars"></i> Menú</button>
+                <div class="dropdown-content" id="menu-categorias">
+                    <a href="TheCream.html#catalogo-dinamico" id="menu-item-especiales" style="display: none;"
+                        onclick="if(window.filtrarCategoria) { event.preventDefault(); filtrarCategoria('especiales'); }"><i
+                            class="fa-solid fa-star"></i> Especiales</a>
+                    <a href="TheCream.html#catalogo-dinamico"
+                        onclick="if(window.filtrarCategoria) { event.preventDefault(); filtrarCategoria('todo'); }"><i
+                            class="fa-solid fa-border-all"></i> Ver Todo</a>
+                    <a href="TheCream.html#catalogo-dinamico"
+                        onclick="if(window.filtrarCategoria) { event.preventDefault(); filtrarCategoria('postres'); }"><i
+                            class="fa-solid fa-cake-candles"></i> Postres</a>
+                    <a href="TheCream.html#catalogo-dinamico"
+                        onclick="if(window.filtrarCategoria) { event.preventDefault(); filtrarCategoria('helados'); }"><i
+                            class="fa-solid fa-ice-cream"></i> Helados</a>
+                    <a href="TheCream.html#catalogo-dinamico"
+                        onclick="if(window.filtrarCategoria) { event.preventDefault(); filtrarCategoria('bebidas'); }"><i
+                            class="fa-solid fa-glass-water"></i> Bebidas</a>
+                    <a href="TheCream.html#catalogo-dinamico"
+                        onclick="if(window.filtrarCategoria) { event.preventDefault(); filtrarCategoria('salados'); }"><i
+                            class="fa-solid fa-pizza-slice"></i> Salados</a>
+                    <a href="TheCream.html#catalogo-dinamico"
+                        onclick="if(window.filtrarCategoria) { event.preventDefault(); filtrarCategoria('combos'); }"><i
+                            class="fa-solid fa-gift"></i> Combos</a>
+                </div>
+            </div>
+            <div class="logo-container">
+                <img src="imagenes/Inicio/TheCream.jpg" alt="Logo The Cream" class="logo">
+            </div>
+        </div>
+        <button class="menu-hamburguesa" id="btn-menu"><i class="fa-solid fa-bars"></i></button>
+        <nav id="menu-principal">
+            <ul>
+                <li><a href="TheCream.html" class="nav-link">Catálogo y Promos</a></li>
+                <li><a href="nosotros.html" class="nav-link">Sobre Nosotros</a></li>
+                <li><a href="contacto.html" class="nav-link active">Contacto</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="split-layout-container" style="margin-top: 0;">
+            <div class="split-section reverse">
+                <div class="split-image" style="background-image: url('imagenes/contacto_hero.png'); background-position: center 20%;"></div>
+                <div class="split-text" style="padding-left: 8%; padding-top: 120px; padding-bottom: 80px;">
+                    <h2 style="font-size: 4.5rem; margin-bottom: 10px;">Hablemos</h2>
+                    <p style="font-size: 1.3rem; margin-bottom: 50px; max-width: 500px;">
+                        ¿Tienes una reserva especial, un pedido grande o simplemente quieres saludarnos? Estamos a un clic de distancia.
+                    </p>
+                    
+                    <div style="margin-bottom: 40px;">
+                        <h3 style="margin-top: 0; font-size: 1.1rem; color: var(--text-muted); border: none; padding: 0; margin-bottom: 10px; text-transform: uppercase; letter-spacing: 2px;">WhatsApp Directo</h3>
+                        <a href="https://wa.me/51984527421?text=¡Hola%20The%20Cream!" target="_blank" style="display: inline-flex; align-items: center; text-decoration: none; color: #25D366; font-size: 1.8rem; font-weight: bold; transition: transform 0.3s;" onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='scale(1)'">
+                            <i class="fa-brands fa-whatsapp" style="margin-right: 12px; font-size: 2.2rem;"></i> +51 984 527 421
+                        </a>
+                    </div>
+
+                    <div style="margin-bottom: 50px;">
+                        <h3 style="margin-top: 0; font-size: 1.1rem; color: var(--text-muted); border: none; padding: 0; margin-bottom: 15px; text-transform: uppercase; letter-spacing: 2px;">Redes Sociales</h3>
+                        <div style="display: flex; gap: 20px;">
+                            <a href="https://www.instagram.com/the.cream.piura" target="_blank" style="color: #E1306C; font-size: 2rem; transition: transform 0.3s ease; display: inline-block;" onmouseover="this.style.transform='scale(1.2) translateY(-5px)'" onmouseout="this.style.transform='scale(1) translateY(0)'" title="Instagram">
+                                <i class="fa-brands fa-instagram"></i>
+                            </a>
+                            <a href="https://www.tiktok.com/@the.cream.piura" target="_blank" style="color: #000000; font-size: 2rem; transition: transform 0.3s ease; display: inline-block;" onmouseover="this.style.transform='scale(1.2) translateY(-5px)'" onmouseout="this.style.transform='scale(1) translateY(0)'" title="TikTok">
+                                <i class="fa-brands fa-tiktok"></i>
+                            </a>
+                        </div>
+                    </div>
+
+                    <div style="margin-top: 20px; padding-top: 30px; border-top: 1px solid rgba(0,0,0,0.1);">
+                        <a href="#" onclick="document.getElementById('modal-reclamos').style.display='flex'; return false;" style="color: var(--text-muted); text-decoration: none; font-size: 1.2rem; font-weight: bold; display: flex; align-items: center; transition: color 0.3s;" onmouseover="this.style.color='var(--primary)'" onmouseout="this.style.color='var(--text-muted)'">
+                            <i class="fa-solid fa-book" style="margin-right: 10px;"></i> Libro de Reclamaciones Virtual
+                        </a>
+                        <p style="font-size: 0.85rem; color: #888; margin-top: 10px; line-height: 1.5; max-width: 450px;">
+                            * Conforme a lo establecido en el Código de Protección y Defensa del Consumidor, este establecimiento cuenta con un Libro de Reclamaciones Virtual.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ==========================================
+             MODAL: LIBRO DE RECLAMACIONES
+             ========================================== -->
+        <div id="modal-reclamos"
+            style="display: none; position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; background: rgba(0,0,0,0.6); backdrop-filter: blur(3px); z-index: 2000; justify-content: center; align-items: center;">
+            <div
+                style="background: white; width: 500px; max-width: 90%; padding: 30px; border-radius: 12px; position: relative;">
+                <button type="button" onclick="document.getElementById('modal-reclamos').style.display='none'"
+                    style="position: absolute; top: 15px; right: 15px; background: none; border: none; font-size: 1.5rem; cursor: pointer; color: #888;">&times;</button>
+                <div style="text-align: center; margin-bottom: 20px;">
+                    <img src="https://cdn-icons-png.flaticon.com/512/2907/2907150.png" alt="Libro de Reclamaciones"
+                        style="width: 50px;">
+                    <h2 style="color: var(--dark); margin-top: 10px;">Libro de Reclamaciones</h2>
+                </div>
+                <form id="form-reclamo">
+                    <div class="form-group" style="margin-bottom: 15px;">
+                        <label>DNI / CE:</label>
+                        <input type="text" id="rec-dni" required
+                            style="width: 100%; padding: 10px; border-radius: 5px; border: 1px solid #ccc;">
+                    </div>
+                    <div class="form-group" style="margin-bottom: 15px;">
+                        <label>Nombre Completo:</label>
+                        <input type="text" id="rec-nombre" required
+                            style="width: 100%; padding: 10px; border-radius: 5px; border: 1px solid #ccc;">
+                    </div>
+                    <div class="form-group" style="margin-bottom: 15px;">
+                        <label>Correo Electrónico:</label>
+                        <input type="email" id="rec-correo" required
+                            style="width: 100%; padding: 10px; border-radius: 5px; border: 1px solid #ccc;">
+                    </div>
+                    <div class="form-group" style="margin-bottom: 15px;">
+                        <label>Detalle del Reclamo:</label>
+                        <textarea id="rec-detalle" rows="4" required
+                            style="width: 100%; padding: 10px; border-radius: 5px; border: 1px solid #ccc; resize: vertical;"></textarea>
+                    </div>
+                    <button type="submit" class="btn-enviar"
+                        style="width: 100%; padding: 12px; font-size: 1.1rem; border: none; border-radius: 5px; background: var(--primary); color: white; font-weight: bold; cursor: pointer;">Registrar
+                        Reclamo</button>
+                </form>
+            </div>
+        </div>
+
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <img src="imagenes/inicio/TheCream.jpg" alt="The Cream Logo" class="footer-logo">
+            <p>Postres y Alimentos Rápidos</p>
+            <div style="margin: 15px 0; display: flex; gap: 20px; justify-content: center;">
+                <a href="#" class="link-instagram" target="_blank" style="color: white; font-size: 1.8rem; transition: transform 0.3s;" onmouseover="this.style.transform='scale(1.2)'" onmouseout="this.style.transform='scale(1)'"><i class="fa-brands fa-instagram"></i></a>
+                <a href="#" class="link-tiktok" target="_blank" style="color: white; font-size: 1.8rem; transition: transform 0.3s;" onmouseover="this.style.transform='scale(1.2)'" onmouseout="this.style.transform='scale(1)'"><i class="fa-brands fa-tiktok"></i></a>
+                <a href="#" class="link-whatsapp" target="_blank" style="color: white; font-size: 1.8rem; transition: transform 0.3s;" onmouseover="this.style.transform='scale(1.2)'" onmouseout="this.style.transform='scale(1)'"><i class="fa-brands fa-whatsapp"></i></a>
+            </div>
+            <p>&copy; 2026 Todos los derechos reservados | Piura, Perú</p>
+        </div>
+    </footer>
+
+    <!-- Botón Flotante de WhatsApp -->
+    <a href="https://wa.me/51984527421?text=¡Hola%20The%20Cream!" class="btn-whatsapp-flotante" target="_blank" title="Chatear por WhatsApp">
+        <i class="fa-brands fa-whatsapp"></i>
+    </a>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', async () => {
+            try {
+                const res = await fetch('/api/config');
+                if (res.ok) {
+                    const config = await res.json();
+                    if (config.whatsapp) {
+                        const enlacesWs = document.querySelectorAll('a[href*="wa.me"]');
+                        enlacesWs.forEach(a => {
+                            const url = new URL(a.href);
+                            const texto = url.searchParams.get('text') || '';
+                            a.href = `https://wa.me/${config.whatsapp.replace(/\+/g, '')}${texto ? '?text=' + encodeURIComponent(texto) : ''}`;
+                        });
+                        const textosWs = document.querySelectorAll('.txt-whatsapp');
+                        textosWs.forEach(el => el.textContent = config.whatsapp);
+                    }
+                    if (config.instagram) {
+                        document.querySelectorAll('.link-instagram').forEach(a => a.href = config.instagram);
+                    }
+                    if (config.tiktok) {
+                        document.querySelectorAll('.link-tiktok').forEach(a => a.href = config.tiktok);
+                    }
+                    if (config.color_primario) {
+                        document.documentElement.style.setProperty('--primary', config.color_primario);
+                        let hex = String(config.color_primario).replace(/[^0-9a-f]/gi, '');
+                        if (hex.length < 6) hex = hex[0]+hex[0]+hex[1]+hex[1]+hex[2]+hex[2];
+                        let lum = -0.3;
+                        let rgb = "#", c, i;
+                        for (i = 0; i < 3; i++) {
+                            c = parseInt(hex.substr(i*2,2), 16);
+                            c = Math.round(Math.min(Math.max(0, c + (c * lum)), 255)).toString(16);
+                            rgb += ("00"+c).substr(c.length);
+                        }
+                        document.documentElement.style.setProperty('--secondary', rgb);
+                    }
+                }
+            } catch (e) { console.error(e); }
+
+            // Cargar temática activa
+            try {
+                const resTematica = await fetch('/api/tematica-activa');
+                if (resTematica.ok) {
+                    const dataTematica = await resTematica.json();
+                    if (dataTematica.archivo_css && dataTematica.archivo_css !== 'null') {
+                        localStorage.setItem('thecream_theme_css', dataTematica.archivo_css);
+                        const preload = document.getElementById('theme-css-preload');
+                        if (preload && preload.getAttribute('href') !== dataTematica.archivo_css) {
+                            preload.remove();
+                        }
+                        if (!document.querySelector(`link[href="${dataTematica.archivo_css}"]`)) {
+                            const link = document.createElement('link');
+                            link.rel = 'stylesheet';
+                            link.href = dataTematica.archivo_css;
+                            document.head.appendChild(link);
+                        }
+                    } else {
+                        localStorage.setItem('thecream_theme_css', 'null');
+                        const preload = document.getElementById('theme-css-preload');
+                        if (preload) preload.remove();
+                    }
+                    const logoImg = document.querySelector('.logo');
+                    const menuEspeciales = document.getElementById('menu-item-especiales');
+                    if (dataTematica.nombre === 'San Valentín' && logoImg) {
+                        logoImg.src = 'imagenes/Inicio/logo_san_valentin.png';
+                        if (menuEspeciales) menuEspeciales.style.display = 'block';
+                    } else if (dataTematica.nombre === 'Navidad' && logoImg) {
+                        logoImg.src = 'imagenes/Inicio/logo_navidad.png';
+                        if (menuEspeciales) menuEspeciales.style.display = 'block';
+                    } else if (dataTematica.nombre === 'Año Nuevo' && logoImg) {
+                        logoImg.src = 'imagenes/Inicio/logo_ano_nuevo.png';
+                        if (menuEspeciales) menuEspeciales.style.display = 'block';
+                    } else if (dataTematica.nombre === 'Halloween' && logoImg) {
+                        logoImg.src = 'imagenes/Inicio/logo_halloween.png';
+                        if (menuEspeciales) menuEspeciales.style.display = 'block';
+                    } else {
+                        if (logoImg) logoImg.src = 'imagenes/Inicio/TheCream.jpg';
+                        if (menuEspeciales) menuEspeciales.style.display = 'none';
+                    }
+                }
+            } catch (e) { console.error('Error cargando temática:', e); }
+
+            const btnMenu = document.getElementById('btn-menu');
+            const menuPrincipal = document.getElementById('menu-principal');
+            if (btnMenu && menuPrincipal) {
+                btnMenu.addEventListener('click', () => {
+                    menuPrincipal.classList.toggle('nav-activo');
+                });
+            }
+
+            const formContacto = document.getElementById('form-contacto');
+            if (formContacto) {
+                formContacto.addEventListener('submit', async (e) => {
+                    e.preventDefault();
+                    const btn = formContacto.querySelector('button[type="submit"]');
+                    const textOriginal = btn.innerText;
+                    btn.innerText = 'Enviando...';
+                    btn.disabled = true;
+
+                    const data = {
+                        nombre: document.getElementById('nombre').value,
+                        correo: document.getElementById('correo').value,
+                        asunto: document.getElementById('asunto').value,
+                        mensaje: document.getElementById('mensaje').value
+                    };
+
+                    try {
+                        const res = await fetch('/api/contacto', {
+                            method: 'POST',
+                            headers: { 'Content-Type': 'application/json' },
+                            body: JSON.stringify(data)
+                        });
+                        const result = await res.json();
+                        if (res.ok) {
+                            mostrarModalExito('¡Mensaje Enviado!', result.mensaje);
+                            formContacto.reset();
+                        } else {
+                            alert(result.error);
+                        }
+                    } catch (error) {
+                        alert('Error de conexión');
+                    } finally {
+                        btn.innerText = textOriginal;
+                        btn.disabled = false;
+                    }
+                });
+            }
+
+            const formReclamo = document.getElementById('form-reclamo');
+            if (formReclamo) {
+                formReclamo.addEventListener('submit', async (e) => {
+                    e.preventDefault();
+                    const btn = formReclamo.querySelector('button[type="submit"]');
+                    const textOriginal = btn.innerText;
+                    btn.innerText = 'Registrando...';
+                    btn.disabled = true;
+
+                    const data = {
+                        dni_cliente: document.getElementById('rec-dni').value,
+                        nombre_cliente: document.getElementById('rec-nombre').value,
+                        correo: document.getElementById('rec-correo').value,
+                        detalle_reclamo: document.getElementById('rec-detalle').value
+                    };
+
+                    try {
+                        const res = await fetch('/api/reclamos', {
+                            method: 'POST',
+                            headers: { 'Content-Type': 'application/json' },
+                            body: JSON.stringify(data)
+                        });
+                        const result = await res.json();
+                        if (res.ok) {
+                            document.getElementById('modal-reclamos').style.display = 'none';
+                            mostrarModalExito('¡Reclamo Registrado!', result.mensaje);
+                            formReclamo.reset();
+                        } else {
+                            alert(result.error);
+                        }
+                    } catch (error) {
+                        alert('Error de conexión');
+                    } finally {
+                        btn.innerText = textOriginal;
+                        btn.disabled = false;
+                    }
+                });
+            }
+        });
+
+        function mostrarModalExito(titulo, mensaje) {
+            const overlay = document.createElement('div');
+            overlay.style.position = 'fixed';
+            overlay.style.top = '0';
+            overlay.style.left = '0';
+            overlay.style.width = '100vw';
+            overlay.style.height = '100vh';
+            overlay.style.backgroundColor = 'rgba(0,0,0,0.6)';
+            overlay.style.display = 'flex';
+            overlay.style.justifyContent = 'center';
+            overlay.style.alignItems = 'center';
+            overlay.style.zIndex = '3000';
+
+            overlay.innerHTML = `
+                <div style="background: white; width: 350px; padding: 30px; border-radius: 12px; text-align: center; border-top: 10px solid #1abc9c; box-shadow: 0 10px 25px rgba(0,0,0,0.2);">
+                    <i class="fa-solid fa-circle-check" style="font-size: 4rem; color: #1abc9c; margin-bottom: 15px;"></i>
+                    <h3 style="color: var(--dark); font-size: 1.5rem; margin-bottom: 10px;">${titulo}</h3>
+                    <p style="color: #666; font-size: 1rem; margin-bottom: 25px;">${mensaje}</p>
+                    <button onclick="this.parentElement.parentElement.remove()" style="background: #1abc9c; color: white; border: none; padding: 12px 25px; font-weight: bold; font-size: 1rem; border-radius: 6px; cursor: pointer;">Entendido</button>
+                </div>
+            `;
+            document.body.appendChild(overlay);
+        }
+    </script>
+</body>
+
+</html>
