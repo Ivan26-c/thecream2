@@ -297,7 +297,7 @@ async function aplicarTematica() {
             const menuEspeciales = document.getElementById('menu-item-especiales');
 
             if (data.nombre === 'San Valentín') {
-                if (logoImg) logoImg.src = 'imagenes/Inicio/logo_san_valentin.png';
+                if (logoImg) logoImg.src = 'imagenes/inicio/logo_san_valentin.png';
                 if (promoBanner) {
                     promoBanner.style.display = 'block';
                     const heroSection = document.getElementById('hero-carousel');
@@ -310,7 +310,7 @@ async function aplicarTematica() {
                 const heroIndicators = document.querySelector('.hero-indicators');
                 if (heroIndicators) {
                     const slideHTML = `
-                        <div class="hero-slide" style="background-image: linear-gradient(var(--overlay-color, rgba(217, 4, 41, 0.2)), var(--overlay-color, rgba(217, 4, 41, 0.2))), url('imagenes/Inicio/banner-san-valentin.jpg');">
+                        <div class="hero-slide" style="background-image: linear-gradient(var(--overlay-color, rgba(217, 4, 41, 0.2)), var(--overlay-color, rgba(217, 4, 41, 0.2))), url('imagenes/inicio/banner-san-valentin.jpg');">
                             <div class="hero-content">
                                 <h2>¡Especiales de San Valentín!</h2>
                                 <p>Celebra el amor con nuestros postres temáticos de edición limitada. ¡Solo por este mes!</p>
@@ -322,7 +322,7 @@ async function aplicarTematica() {
                     heroIndicators.insertAdjacentHTML('beforeend', '<div class="indicator"><div class="progress"></div></div>');
                 }
             } else if (data.nombre === 'Navidad') {
-                if (logoImg) logoImg.src = 'imagenes/Inicio/logo_navidad.png';
+                if (logoImg) logoImg.src = 'imagenes/inicio/logo_navidad.png';
                 if (promoBanner) {
                     promoBanner.innerHTML = '<p><i class="fa-solid fa-tree" style="color: #0b6e4f;"></i> ¡Promoción Navideña: Por la compra de 2 postres te llevas un helado gratis! <i class="fa-solid fa-tree" style="color: #0b6e4f;"></i></p>';
                     promoBanner.style.display = 'block';
@@ -336,7 +336,7 @@ async function aplicarTematica() {
                 const heroIndicators = document.querySelector('.hero-indicators');
                 if (heroIndicators) {
                     const slideHTML = `
-                        <div class="hero-slide" style="background-image: linear-gradient(var(--overlay-color, rgba(11, 110, 79, 0.4)), var(--overlay-color, rgba(200, 29, 37, 0.4))), url('imagenes/Inicio/fondo_navidad.jpg'); background-size: cover; background-position: center;">
+                        <div class="hero-slide" style="background-image: linear-gradient(var(--overlay-color, rgba(11, 110, 79, 0.4)), var(--overlay-color, rgba(200, 29, 37, 0.4))), url('imagenes/inicio/fondo_navidad.jpg'); background-size: cover; background-position: center;">
                             <div class="hero-content">
                                 <h2>¡Descubre la Magia de la Navidad!</h2>
                                 <p>Prueba nuestra nueva colección navideña con panetón, galletas de jengibre y mucho más.</p>
@@ -348,7 +348,7 @@ async function aplicarTematica() {
                     heroIndicators.insertAdjacentHTML('beforeend', '<div class="indicator"><div class="progress"></div></div>');
                 }
             } else if (data.nombre === 'Año Nuevo') {
-                if (logoImg) logoImg.src = 'imagenes/Inicio/logo_ano_nuevo.png';
+                if (logoImg) logoImg.src = 'imagenes/inicio/logo_ano_nuevo.png';
                 if (promoBanner) {
                     promoBanner.innerHTML = '<p><i class="fa-solid fa-glass-cheers" style="color: #000;"></i> ¡Promoción Especial de Año Nuevo! 20% de descuento en pedidos por adelantado para tus fiestas. <i class="fa-solid fa-glass-cheers" style="color: #000;"></i></p>';
                     promoBanner.style.display = 'block';
@@ -362,7 +362,7 @@ async function aplicarTematica() {
                 const heroIndicators = document.querySelector('.hero-indicators');
                 if (heroIndicators) {
                     const slideHTML = `
-                        <div class="hero-slide" style="background-image: linear-gradient(var(--overlay-color, rgba(0, 0, 0, 0.6)), var(--overlay-color, rgba(0, 0, 0, 0.6))), url('imagenes/Inicio/fondo_anonuevo.png'); background-size: cover; background-position: center;">
+                        <div class="hero-slide" style="background-image: linear-gradient(var(--overlay-color, rgba(0, 0, 0, 0.6)), var(--overlay-color, rgba(0, 0, 0, 0.6))), url('imagenes/inicio/fondo_anonuevo.png'); background-size: cover; background-position: center;">
                             <div class="hero-content">
                                 <h2 style="color: #ffd700;">¡Recibe el 2027 con Dulzura!</h2>
                                 <p>Celebra la llegada del nuevo año con nuestras tortas especiales y packs de fiesta.</p>
@@ -374,7 +374,7 @@ async function aplicarTematica() {
                     heroIndicators.insertAdjacentHTML('beforeend', '<div class="indicator"><div class="progress"></div></div>');
                 }
             } else if (data.nombre === 'Halloween') {
-                if (logoImg) logoImg.src = 'imagenes/Inicio/logo_halloween.png';
+                if (logoImg) logoImg.src = 'imagenes/inicio/logo_halloween.png';
                 if (promoBanner) {
                     promoBanner.innerHTML = '<p><i class="fa-solid fa-ghost" style="color: #000;"></i> ¡Si vienes disfrazado te regalamos un helado! <i class="fa-solid fa-spider" style="color: #000;"></i></p>';
                     promoBanner.style.display = 'block';
@@ -388,7 +388,7 @@ async function aplicarTematica() {
                 const heroIndicators = document.querySelector('.hero-indicators');
                 if (heroIndicators) {
                     const slideHTML = `
-                        <div class="hero-slide" style="background-image: linear-gradient(var(--overlay-color, rgba(0, 0, 0, 0.7)), var(--overlay-color, rgba(230, 126, 34, 0.3))), url('imagenes/Inicio/fondo_halloween.jpg'); background-size: cover; background-position: center;">
+                        <div class="hero-slide" style="background-image: linear-gradient(var(--overlay-color, rgba(0, 0, 0, 0.7)), var(--overlay-color, rgba(230, 126, 34, 0.3))), url('imagenes/inicio/fondo_halloween.jpg'); background-size: cover; background-position: center;">
                             <div class="hero-content">
                                 <h2 style="color: #ff9f43; text-shadow: 2px 2px 10px #d35400;">¡Endulza tu Halloween!</h2>
                                 <p style="color: white;">Nuestros postres terroríficamente deliciosos te están esperando.</p>
