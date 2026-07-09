@@ -31,11 +31,7 @@ try {
     console.error('Error lowercasing public folder:', e);
 }
 
-const path = require('path');
 const dotenv = require('dotenv');
-const multer = require('multer');
-const fs = require('fs');
-
 dotenv.config();
 
 const app = express();
