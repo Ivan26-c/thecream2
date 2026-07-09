@@ -7,30 +7,6 @@ const multer = require('multer');
 const path = require('path');
 const fs = require('fs');
 
-// AUTO-FIX: Convert all files in public to lowercase for Linux compatibility
-function lowercaseFilesAndFolders(dir) {
-    if (!fs.existsSync(dir)) return;
-    const items = fs.readdirSync(dir);
-    for (const item of items) {
-        const itemPath = path.join(dir, item);
-        const lowerItem = item.toLowerCase();
-        const lowerItemPath = path.join(dir, lowerItem);
-        
-        if (item !== lowerItem) {
-            fs.renameSync(itemPath, lowerItemPath);
-        }
-        
-        if (fs.statSync(lowerItemPath).isDirectory()) {
-            lowercaseFilesAndFolders(lowerItemPath);
-        }
-    }
-}
-try {
-    lowercaseFilesAndFolders(path.join(__dirname, 'public'));
-} catch (e) {
-    console.error('Error lowercasing public folder:', e);
-}
-
 const dotenv = require('dotenv');
 dotenv.config();
 
@@ -39,6 +15,43 @@ const PORT = process.env.PORT || 3000;
 
 app.use(cors());
 app.use(express.json());
+
+// Middleware for case-insensitive static files (fixes GitHub upload issue)
+app.use((req, res, next) => {
+    if (req.method !== 'GET') return next();
+    
+    // Only apply to /imagenes
+    if (!req.path.toLowerCase().startsWith('/imagenes/')) return next();
+
+    const publicPath = path.join(__dirname, 'public');
+    const reqPath = decodeURIComponent(req.path);
+    const exactFilePath = path.join(publicPath, reqPath);
+    if (fs.existsSync(exactFilePath)) {
+        return next();
+    }
+    
+    const parts = reqPath.split('/').filter(p => p);
+    let currentDir = publicPath;
+    let found = true;
+    for (const part of parts) {
+        if (!fs.existsSync(currentDir)) { found = false; break; }
+        if (!fs.statSync(currentDir).isDirectory()) { found = false; break; }
+        const files = fs.readdirSync(currentDir);
+        const match = files.find(f => f.toLowerCase() === part.toLowerCase());
+        if (match) {
+            currentDir = path.join(currentDir, match);
+        } else {
+            found = false;
+            break;
+        }
+    }
+    
+    if (found && fs.statSync(currentDir).isFile()) {
+        return res.sendFile(currentDir);
+    }
+    next();
+});
+
 app.use(express.static(path.join(__dirname, 'public')));
 
 const db = require('./src/db');
