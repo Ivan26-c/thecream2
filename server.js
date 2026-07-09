@@ -3,6 +3,34 @@
 // ==========================================
 const express = require('express');
 const cors = require('cors');
+const multer = require('multer');
+const path = require('path');
+const fs = require('fs');
+
+// AUTO-FIX: Convert all files in public to lowercase for Linux compatibility
+function lowercaseFilesAndFolders(dir) {
+    if (!fs.existsSync(dir)) return;
+    const items = fs.readdirSync(dir);
+    for (const item of items) {
+        const itemPath = path.join(dir, item);
+        const lowerItem = item.toLowerCase();
+        const lowerItemPath = path.join(dir, lowerItem);
+        
+        if (item !== lowerItem) {
+            fs.renameSync(itemPath, lowerItemPath);
+        }
+        
+        if (fs.statSync(lowerItemPath).isDirectory()) {
+            lowercaseFilesAndFolders(lowerItemPath);
+        }
+    }
+}
+try {
+    lowercaseFilesAndFolders(path.join(__dirname, 'public'));
+} catch (e) {
+    console.error('Error lowercasing public folder:', e);
+}
+
 const path = require('path');
 const dotenv = require('dotenv');
 const multer = require('multer');

@@ -188,7 +188,7 @@ function renderizarProductos(productos) {
             htmlContent += `
                     <div class="producto-card">
                         ${promoBadge}
-                        <img loading="lazy" src="imagenes/${producto.imagen}" alt="${producto.nombre}" onerror="this.src='https://via.placeholder.com/300x200?text=Postre'">
+                        <img loading="lazy" src="imagenes/${producto.imagen}" alt="${producto.nombre}" onerror="this.src='imagenes/inicio/thecream.jpg'">
                         <div class="producto-info">
                             <h4>${producto.nombre}</h4>
                             <p>${producto.descripcion}</p>
