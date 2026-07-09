@@ -400,7 +400,7 @@ async function aplicarTematica() {
                     heroIndicators.insertAdjacentHTML('beforeend', '<div class="indicator"><div class="progress"></div></div>');
                 }
             } else {
-                if (logoImg) logoImg.src = 'imagenes/Inicio/TheCream.jpg';
+                if (logoImg) logoImg.src = 'imagenes/inicio/thecream.jpg';
                 if (promoBanner) promoBanner.style.display = 'none';
                 if (menuEspeciales) menuEspeciales.style.display = 'none';
             }
@@ -412,7 +412,7 @@ async function aplicarTematica() {
             const logoImg = document.querySelector('.logo');
             const promoBanner = document.getElementById('promo-banner');
             const menuEspeciales = document.getElementById('menu-item-especiales');
-            if (logoImg) logoImg.src = 'imagenes/Inicio/TheCream.jpg';
+            if (logoImg) logoImg.src = 'imagenes/inicio/thecream.jpg';
             if (promoBanner) promoBanner.style.display = 'none';
             if (menuEspeciales) menuEspeciales.style.display = 'none';
         }
@@ -683,7 +683,7 @@ function mostrarBoletaExito(productos, mensajeServidor) {
         `;
     });
 
-    const logoSrc = document.querySelector('.logo') ? document.querySelector('.logo').getAttribute('src') : 'imagenes/Inicio/TheCream.jpg';
+    const logoSrc = document.querySelector('.logo') ? document.querySelector('.logo').getAttribute('src') : 'imagenes/inicio/thecream.jpg';
 
     overlay.innerHTML = `
         <div style="background: white; width: 350px; padding: 30px; border-radius: 12px; box-shadow: 0 15px 35px rgba(0,0,0,0.3); position: relative; border-top: 15px solid var(--primary); font-family: var(--font-text);">
