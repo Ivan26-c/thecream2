@@ -178,10 +178,18 @@ app.post('/api/checkout', async (req, res) => {
 
         let totalPedido = 0;
         for (const item of carrito) {
-            const resProd = await db.query('SELECT precio, stock, nombre FROM productos WHERE id = $1', [item.id]);
+            const resProd = await db.query('SELECT precio, precio_promocional, fecha_fin_promocion, stock, nombre FROM productos WHERE id = $1', [item.id]);
             if (resProd.rows.length === 0) throw new Error(`El producto no existe`);
             if (resProd.rows[0].stock < item.cantidad) throw new Error(`Stock insuficiente`);
-            totalPedido += parseFloat(resProd.rows[0].precio) * item.cantidad;
+            
+            let precioUsar = parseFloat(resProd.rows[0].precio);
+            const pPromo = resProd.rows[0].precio_promocional;
+            const fFin = resProd.rows[0].fecha_fin_promocion;
+            if (pPromo && fFin && new Date(fFin) > new Date()) {
+                precioUsar = parseFloat(pPromo);
+            }
+            
+            totalPedido += precioUsar * item.cantidad;
         }
 
         const resPedido = await db.query(
@@ -191,8 +199,13 @@ app.post('/api/checkout', async (req, res) => {
         const idBoleta = resPedido.rows[0].id;
 
         for (const item of carrito) {
-            const resPrecio = await db.query('SELECT precio FROM productos WHERE id = $1', [item.id]);
-            const precioReal = resPrecio.rows[0].precio;
+            const resPrecio = await db.query('SELECT precio, precio_promocional, fecha_fin_promocion FROM productos WHERE id = $1', [item.id]);
+            let precioReal = parseFloat(resPrecio.rows[0].precio);
+            const pP = resPrecio.rows[0].precio_promocional;
+            const fF = resPrecio.rows[0].fecha_fin_promocion;
+            if (pP && fF && new Date(fF) > new Date()) {
+                precioReal = parseFloat(pP);
+            }
 
             await db.query(
                 'INSERT INTO detalle_pedidos (id_pedido, id_producto, cantidad, precio_unitario) VALUES ($1, $2, $3, $4)',
