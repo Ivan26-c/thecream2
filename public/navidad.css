@@ -1,0 +1,69 @@
+:root {
+    --primary: #0b6e4f !important;
+    --secondary: #0b6e4f !important;
+    --dark: #081c15 !important;
+}
+
+body {
+    background-color: #f8f9fa !important;
+    background-image:
+        url("data:image/svg+xml,%3Csvg width='400' height='400' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23a2d2ff' opacity='0.8'%3E%3Ccircle cx='50' cy='50' r='4'/%3E%3Ccircle cx='150' cy='250' r='3'/%3E%3Ccircle cx='300' cy='100' r='5'/%3E%3Ccircle cx='200' cy='350' r='6'/%3E%3Cpath d='M100,150 v-10 v20 v-10 h-10 h20 h-10 l-7,-7 l14,14 l-7,-7 l7,-7 l-14,14' stroke='%23a2d2ff' stroke-width='2' fill='none'/%3E%3Cpath d='M350,250 v-10 v20 v-10 h-10 h20 h-10 l-7,-7 l14,14 l-7,-7 l7,-7 l-14,14' stroke='%23a2d2ff' stroke-width='2' fill='none'/%3E%3C/g%3E%3C/svg%3E"),
+        url("data:image/svg+xml,%3Csvg width='600' height='600' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23bde0fe' opacity='0.6'%3E%3Ccircle cx='100' cy='100' r='6'/%3E%3Ccircle cx='400' cy='200' r='4'/%3E%3Ccircle cx='250' cy='450' r='7'/%3E%3Ccircle cx='500' cy='550' r='5'/%3E%3Cpath d='M200,300 v-15 v30 v-15 h-15 h30 h-15 l-10,-10 l20,20 l-10,-10 l10,-10 l-20,20' stroke='%23bde0fe' stroke-width='2' fill='none'/%3E%3C/g%3E%3C/svg%3E") !important;
+    background-size: 400px 400px, 600px 600px !important;
+    background-attachment: fixed, fixed !important;
+    animation: snowFall 60s linear infinite !important;
+}
+
+@keyframes snowFall {
+    0% {
+        background-position: 0px 0px, 0px 0px;
+    }
+
+    100% {
+        background-position: 0px 400px, 0px 600px;
+    }
+}
+
+header {
+    background-color: rgba(46, 111, 90, 0.4) !important;
+}
+
+header.scrolled,
+header.header-interno {
+    background-color: rgba(169, 223, 191, 0.6) !important;
+    backdrop-filter: blur(10px) !important;
+    -webkit-backdrop-filter: blur(10px) !important;
+    border-bottom: 2px solid var(--secondary) !important;
+}
+
+.promo-banner {
+    background-color: #d4efdf !important;
+    color: #0b5345 !important;
+    font-weight: bold;
+}
+
+.nav-link {
+    color: white !important;
+}
+
+.nav-link:hover,
+.nav-link.active {
+    background-color: transparent !important;
+    color: var(--primary) !important;
+    border-bottom: 2px solid var(--primary) !important;
+}
+
+.btn-principal {
+    background: linear-gradient(135deg, #0b6e4f, #118f68) !important;
+    border: none !important;
+    color: white !important;
+}
+
+.cart-footer {
+    background-color: #d4efdf !important;
+}
+
+
+.producto-card:hover {
+    box-shadow: 0 10px 20px rgba(11, 110, 79, 0.2) !important;
+}
