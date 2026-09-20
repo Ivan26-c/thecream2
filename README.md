@@ -150,6 +150,7 @@ DB_NAME=thecream_db
 npm start
 ```
 Abre tu navegador en `http://localhost:3000` para ver la tienda o en `http://localhost:3000/admin.html` para ingresar al panel de administración.
+o usa el siguiente url: `https://thecream.onrender.com/`
 
 > **Credenciales de prueba para el panel admin:**  
 > **Usuario:** `admin`  
